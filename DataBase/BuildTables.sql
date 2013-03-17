@@ -1,9 +1,17 @@
-create table Post(ID Integer, Content  Varchar(800));
+drop table Post;
 
-create table Page(ID Integer, Content Varchar(800))	;
-
-create table PagePost(PageID Integer, PostID Integer);
+create table Post
+(`Id` int(10) Unsigned Primary KEY AUTO_INCREMENT, 
+Tittle varchar (50),
+Description varchar(200),
+Content  Varchar(800),
+PublishDate DATETIME NOT NULL,	
+PUublish
+ExpireDate datetime);
 
 create table Category(ID Integer, Name Integer);	
 
-create table PostPost(IDPost1 Integer, IDPost2 Integer);
+create table PostCategory(Post Integer, Category Integer);
+
+//Message Scroll Horizontal
+
