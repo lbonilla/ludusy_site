@@ -40,7 +40,7 @@
   
      <div class="navbar navbar-fixed-to ludusy-navbar" >
       <div class="navbar-inner">
-        <div class="container ">
+        <div class="container-fluid">
           <button type="button" class="btn btn-navbar " data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>	
             <span class="icon-bar"></span>
@@ -60,16 +60,14 @@
       </div>
     </div>
     <div class ="ludusy-section-header">
-	    <div class="container">	
+	    <div class="container-fluid">	
 		      <div class="row">
-			      	<div class="span1">
-			      	</div>
+		      		<div class="span1"></div>
 			      	<div class="span10">
 				      	<!--Description header-->
 				        <img src="img/HeaderSlider/header1.jpg" alt="header1" width="1024" height="600">
 			      	</div>
-			      	<div class="span1">
-			      	</div>
+			        <div class="span1"></div>
 		      </div>
 	    </div>
     </div>
@@ -77,48 +75,109 @@
 		<div class="ludusy-header-line">
 			<h1 style='	margin-left: 10%;'>Blog Post</h1>		
 		</div>
-	    <div class="container ludusy-section-post-wrapper">
-		    
-		      <!--Posts Section-->
-		      <div class ="row">
-			      <?php		        
-			      $result = mysqli_query($con,"SELECT Id, Tittle,Description, DATE_FORMAT(PublishDate, '%M %D, %Y') AS PubDate FROM Post ORDER BY PublishDate DESC LIMIT 6 ;");
-					while($row = mysqli_fetch_array($result))
-					  {				  
-						  echo "<div class='span4'>";	
-							  echo "<div class='ludusy-post-preview'>";
-								  echo "<div class='ludusy-post-preview-wrapper'>";						  							  
-									  echo "<div class='ludusy-post-preview-content'>";						  	
-										  echo "<h4 class='date'>" . $row['PubDate'] ."</h4>";
-										  echo "<h3>" . $row['Tittle'] . "</h2>";					  
-										  echo "<p>" .  $row['Description'] . "</p> ";
-									  echo "</div>";	  
-									  echo "<div class='ludusy-post-readMore'>";
-										  echo "<div class='space'></div>";								  	
-										  echo "<p><a  href='http://ludusy.com/Posts.php?id=" . $row['Id']."'> Read More &raquo; </a></p>";
-									  echo "</div>";
-							       echo "</div>";
-							  echo "</div>";				  
-						  echo "</div>";
-					  
-					  }
-				
-			      ?>
-		      </div>
-		    <!--Footer section--> 
-		    <div class="ludusy-section-footer">
-		    	 <div class="container">
-			    	 <div class="row">
-			    	 	<div class ='span1'>
-			    	 		 holas
-			    	 	</div>
-			    	 </div>
-		    	 </div>
+	    <div class="container-fluid ludusy-section-post-wrapper">
+		    <div>
+		    	<div class="container">
+		    	  <!--Posts Section-->
+			      <div class ="row">
+					      <?php
+					      
+					      $result = mysqli_query($con,"SELECT Id, Tittle,Description, DATE_FORMAT(PublishDate, '%M %D, %Y') AS PubDate FROM Post ORDER BY PublishDate DESC LIMIT 6 ;");
+							while($row = mysqli_fetch_array($result))
+							  {		
+									echo	"<div class='span4'>";										
+													  echo "<div class='ludusy-post-preview'>";
+													  echo "<div class='ludusy-post-preview-wrapper'>";						  							  
+														  echo "<div class='ludusy-post-preview-content'>";						  	
+															  echo "<h4 class='date'>" . $row['PubDate'] ."</h4>";
+															  echo "<h1>" . $row['Tittle'] . "</h1s>";					  
+															  echo "<p>" .  $row['Description'] . "</p> ";
+														  echo "</div>";	  
+														  echo "<div class='ludusy-post-readMore'>";
+															  echo "<div class='space'></div>";								  	
+															  echo "<p><a  href='http://ludusy.com/Posts.php?id=" . $row['Id']."'> Read More &raquo; </a></p>";
+														  echo "</div>";
+												       echo "</div>";
+												  echo "</div>";	
+										echo "</div>";													  
+								
+							  }
+					      ?>
+			      </div>
+		    	</div>
 		    </div>
-	      </div> <!-- /container -->     
-
+		 </div>
+	</div>
+    <!--Footer section--> 
+    <div class="ludusy-section-footer">
+    	 <div class="container-fluid">
+    	 	<div class="container">
+    	 	   <div class="row">
+    	 	   <div class='span1'>
+    	 	   </div>
+	    	 	<div class ='span2'>
+	    	 		<h3 style='color:white'>ABOUT ME</h3>
+	    	 	</div>
+	    	 	<div class ='span2' >
+	    	 		<h3 style='color:white'>CONTACT</h3>
+	    	 	</div>
+	    	 	<div class ='span3'>
+	    	 		<h3 style='color:white'>CATEGORIES</h3>
+	    	 	</div>			  
+	    	 	<div class='span1'>
+	    	 	</div>  	 				    	 	
+	    	 </div>
+    	 	</div>
+    	 </div>
     </div>
-
+    <div class="ludusy-section-sub-footer">
+	   <div class="container">
+	  	 <div class="row">
+	  	 	<div class='span1'>
+	  	 	</div>
+	  	 	<div class="span6">
+	  	 		<div class="row">
+	  	 			<div class="span1">	  	 			
+			  	 		<div>
+			  	 	 		<h4>COCOS2DX</h4>
+			  	 		</div>
+	  	 			</div>
+	  	 			<div class="span1">
+			  	 		<div>
+			  	 	 		<h4>MARMALADE</h4>	  	 	
+			  	 		</div>		  	 		
+	  	 			</div>
+	  	 			<div class="span1">
+			  	 		<div>	  	 	
+				  	 	 	<h4>GAMEDESIGN</h4>	  	 	
+			  	 		</div> 		  	 		
+	  	 			</div>	
+	  	 			<div class="span1">
+			  	 		<div>	  	 	
+				  	 	 	<h4>GAME AI</h4>	  	 	
+			  	 		</div> 		  	 		
+	  	 			</div>
+	  	 			<div class="span1">	  	 			
+			  	 		<div>	  	 		
+			  	 	 		<h4>CODE SNIPS</h4>	  	 	
+			  	 		</div>		  	 		
+	  	 			</div>
+	  	 		</div>	
+	  	 	</div>
+	  	 	<div class="span3">
+				<p>
+					Welcome to my site, this is just a way to keep
+					track on my learning as a game deveveloper and
+					designer, I hope you can find something usefull.
+				</p>
+	  	 	</div>	  	 	
+			<div class='span2'>
+			</div>	  	 		  	 	
+	  	 </div>
+	   </div>	
+	</div>
+     
+    
 	 <?php
 	$con=mysqli_connect("184.168.155.106","ludusy","Cocoro@123","ludusy");
 	
